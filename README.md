@@ -1,4 +1,4 @@
-# Sistema de Cursos Online — Front-end (React + Vite + TypeScript)
+# Sistema de Cursos Online - Front-end (React + Vite + TypeScript)
 
 Front-end que consome a API REST de **Cursos Online** (Node.js, Express,
 Sequelize, PostgreSQL). Permite gerenciar **Categorias** (cada uma com uma
@@ -36,26 +36,26 @@ npm run preview
 
 ## Integração com a API (todos os métodos usados)
 
-| Recurso     | Método | Rota                 | Onde é usado no front-end                          |
-| ----------- | ------ | -------------------- | -------------------------------------------------- |
-| Categorias  | GET    | `/categories`        | Lista, Painel, dropdown da matrícula               |
-| Categorias  | GET    | `/categories/:id`    | Detalhe da categoria, pré-preenchimento da edição  |
-| Categorias  | POST   | `/categories`        | Cadastro de categoria                              |
-| Categorias  | PUT    | `/categories/:id`    | Edição de categoria                                |
-| Categorias  | DELETE | `/categories/:id`    | Exclusão (lista e detalhe)                         |
-| Matrículas  | GET    | `/enrollments`       | Lista, Painel, alunos por categoria                |
-| Matrículas  | GET    | `/enrollments/:id`   | Detalhe da matrícula, pré-preenchimento da edição  |
-| Matrículas  | POST   | `/enrollments`       | Cadastro (API calcula `endDate`)                   |
-| Matrículas  | PUT    | `/enrollments/:id`   | Edição (`endDate` recalculado no cliente)          |
-| Matrículas  | DELETE | `/enrollments/:id`   | Exclusão (lista e detalhe)                         |
+| Recurso    | Método | Rota               | Onde é usado no front-end                         |
+| ---------- | ------ | ------------------ | ------------------------------------------------- |
+| Categorias | GET    | `/categories`      | Lista, Painel, dropdown da matrícula              |
+| Categorias | GET    | `/categories/:id`  | Detalhe da categoria, pré-preenchimento da edição |
+| Categorias | POST   | `/categories`      | Cadastro de categoria                             |
+| Categorias | PUT    | `/categories/:id`  | Edição de categoria                               |
+| Categorias | DELETE | `/categories/:id`  | Exclusão (lista e detalhe)                        |
+| Matrículas | GET    | `/enrollments`     | Lista, Painel, alunos por categoria               |
+| Matrículas | GET    | `/enrollments/:id` | Detalhe da matrícula, pré-preenchimento da edição |
+| Matrículas | POST   | `/enrollments`     | Cadastro (API calcula `endDate`)                  |
+| Matrículas | PUT    | `/enrollments/:id` | Edição (`endDate` recalculado no cliente)         |
+| Matrículas | DELETE | `/enrollments/:id` | Exclusão (lista e detalhe)                        |
 
 ## Rotas da aplicação
 
-- `/` — Painel (visão geral)
-- `/categorias` — listagem · `/categorias/nova` — cadastro
-- `/categorias/:id` — detalhe · `/categorias/:id/editar` — edição
-- `/matriculas` — listagem · `/matriculas/nova` — cadastro
-- `/matriculas/:id` — detalhe · `/matriculas/:id/editar` — edição
+- `/` - Painel (visão geral)
+- `/categorias` - listagem · `/categorias/nova` - cadastro
+- `/categorias/:id` - detalhe · `/categorias/:id/editar` - edição
+- `/matriculas` - listagem · `/matriculas/nova` - cadastro
+- `/matriculas/:id` - detalhe · `/matriculas/:id/editar` - edição
 
 ## Estrutura
 
@@ -81,4 +81,7 @@ src/
 - **Regra de negócio**: na criação, a API calcula `endDate`. Na edição, o PUT da
   API não recalcula, então o front-end recalcula com a mesma regra
   (`início + duração em meses`) e envia o valor, mantendo a consistência.
+
+```
+
 ```
