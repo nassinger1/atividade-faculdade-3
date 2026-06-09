@@ -1,0 +1,69 @@
+.viewport {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-width: min(92vw, 380px);
+}
+
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-lg);
+  background: var(--card);
+  border: 1px solid var(--line-strong);
+  box-shadow: var(--shadow-lift);
+  cursor: pointer;
+  font-size: 0.92rem;
+  color: var(--ink);
+  animation: slidein 0.32s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+
+.dot {
+  flex: 0 0 auto;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  margin-top: 0.42rem;
+}
+
+.message {
+  line-height: 1.4;
+}
+
+.success {
+  border-left: 4px solid var(--success);
+}
+.success .dot {
+  background: var(--success);
+}
+
+.error {
+  border-left: 4px solid var(--danger);
+}
+.error .dot {
+  background: var(--danger);
+}
+
+.info {
+  border-left: 4px solid var(--gold);
+}
+.info .dot {
+  background: var(--gold);
+}
+
+@keyframes slidein {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
